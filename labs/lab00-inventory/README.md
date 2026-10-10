@@ -1,0 +1,87 @@
+\# Lab N - 00
+
+
+
+Machine: DESKTOP-EA7P1RT
+
+Date: 10.10.2026
+
+
+
+\## What i did
+
+
+
+1. git clone https://github.com/OAKRIS/osarch-bolatbek.git
+2. cd osarch-bolatbek
+3. mkdir labs
+4. git add .
+5. git commit -m "create labs folder fr"
+6. git push
+7. cd labs
+8. mkdir lab00-inventory
+9. cd lab00-inventory
+10. mkdir evidence
+11. New-Item README.md -ItemType File
+12. cd evidence
+13. New-Item cpu.txt -ItemType File
+14. New-Item memory.txt -ItemType File
+15. New-Item disk.txt -ItemType File
+16. git status
+17. git add .
+18. git commit -m "all the other stuff added"
+19. git push
+20. Get-CimInstance Win32\_PhysicalMemory
+21. Get-CimInstance Win32\_PhysicalMemoryArray | Select-Object MemoryDevices
+22. Get-PhysicalDisk | Format-List \*
+23. Get-CimInstance Win32\_Processor | Format-List \* | Out-File evidence\\cpu.txt -Encoding utf8
+24. Get-CimInstance Win32\_Processor | Format-List \* | Out-File cpu.txt -Encoding utf8
+25. Get-CimInstance Win32\_PhysicalMemory | Out-File memory.txt -Encoding utf8
+26. Get-PhysicalDisk | Format-List \* | Out-File disk.txt -Encoding utf8
+27. et-CimInstance Win32\_Processor | Format-List \*
+28. Get-CimInstance Win32\_Processor | Format-List \*
+29. Get-Volume
+30. $env:firmware\_type
+31. systeminfo
+32. Get-CimInstance Win32\_PhysicalMemory
+
+
+
+\## Result
+
+
+
+|What|Value|Where I got it|
+|-|-|-|
+|Total memory|17179869184|Get-CimInstance Win32\_PhysicalMemory|
+|Number of installed modules|1|Get-CimInstance Win32\_PhysicalMemory|
+|Memory module Speed|2667|Get-CimInstance Win32\_PhysicalMemory|
+|Disk Model|SK hynix BC501 HFM256GDJTNG-8310A|Get-PhysicalDisk \| Format-List \*|
+|Disk Type|SSD, NVMe|Get-PhysicalDisk \| Format-List \*|
+|Disk free space on the VM volume|49.45 GB|Get-Volume|
+|CPU model|AMD Ryzen 3 3200G with Radeon Vega Graphics|Get-CimInstance Win32\_Processor \| Format-List \*|
+|CPU core count|4|Get-CimInstance Win32\_Processor \| Format-List \*|
+|CPU thread count|4|Get-CimInstance Win32\_Processor \| Format-List \*|
+|Firmware type|UEFI|$env:firmware\_type|
+|Firmware version|AMI F.43|systeminfo|
+|Firmware date|08.08.2022|systeminfo|
+|Virtualization|Виртуализация включена во встроенном ПО: Нет|systeminfo|
+
+
+
+\## What did  not work the first time:
+
+When searching for module numbers ran Get-CimInstance Win32\_PhysicalMemoryArray |
+
+Select-Object MemoryDevices. It showed me total number of modules. I realized that I need to search for installed modules instead, which was 1, as there was only one row.
+
+
+
+\## Evidence
+
+evidence/cpu.txt - output of the command i used to show that i did not look through graphical sytem information window
+
+evidence/disk.txt - output of the command i used to show that i did not look through graphical sytem information window
+
+evidence/memory.txt - output of the command i used to show that i did not look through graphical sytem information window
+
