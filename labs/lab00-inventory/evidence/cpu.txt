@@ -1,0 +1,66 @@
+﻿
+
+Availability                            : 3
+CpuStatus                               : 1
+CurrentVoltage                          : 14
+DeviceID                                : CPU0
+ErrorCleared                            : 
+ErrorDescription                        : 
+LastErrorCode                           : 
+LoadPercentage                          : 6
+Status                                  : OK
+StatusInfo                              : 3
+AddressWidth                            : 64
+DataWidth                               : 64
+ExtClock                                : 100
+L2CacheSize                             : 2048
+L2CacheSpeed                            : 
+MaxClockSpeed                           : 3600
+PowerManagementSupported                : False
+ProcessorType                           : 3
+Revision                                : 6145
+SocketDesignation                       : AM4
+Version                                 : Модель 8, выпуск 1
+VoltageCaps                             : 
+Caption                                 : AMD64 Family 23 Model 24 Stepping 1
+Description                             : AMD64 Family 23 Model 24 Stepping 1
+InstallDate                             : 
+Name                                    : AMD Ryzen 3 3200G with Radeon Vega Graphics    
+ConfigManagerErrorCode                  : 
+ConfigManagerUserConfig                 : 
+CreationClassName                       : Win32_Processor
+PNPDeviceID                             : 
+PowerManagementCapabilities             : 
+SystemCreationClassName                 : Win32_ComputerSystem
+SystemName                              : DESKTOP-EA7P1RT
+CurrentClockSpeed                       : 3600
+Family                                  : 107
+OtherFamilyDescription                  : 
+Role                                    : CPU
+Stepping                                : 1
+UniqueId                                : 
+UpgradeMethod                           : 49
+Architecture                            : 9
+AssetTag                                : Unknown
+Characteristics                         : 252
+L3CacheSize                             : 4096
+L3CacheSpeed                            : 0
+Level                                   : 23
+Manufacturer                            : AuthenticAMD
+NumberOfCores                           : 4
+NumberOfEnabledCore                     : 4
+NumberOfLogicalProcessors               : 4
+PartNumber                              : Unknown
+ProcessorId                             : 178BFBFF00810F81
+SecondLevelAddressTranslationExtensions : True
+SerialNumber                            : Unknown
+ThreadCount                             : 4
+VirtualizationFirmwareEnabled           : False
+VMMonitorModeExtensions                 : True
+PSComputerName                          : 
+CimClass                                : root/cimv2:Win32_Processor
+CimInstanceProperties                   : {Caption, Description, InstallDate, Name...}
+CimSystemProperties                     : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+

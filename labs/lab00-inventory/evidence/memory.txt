@@ -1,0 +1,42 @@
+﻿
+
+Caption              : Физическая память
+Description          : Физическая память
+InstallDate          : 
+Name                 : Физическая память
+Status               : 
+CreationClassName    : Win32_PhysicalMemory
+Manufacturer         : Unknown
+Model                : 
+OtherIdentifyingInfo : 
+PartNumber           : CL19-19-19 D4-2666  
+PoweredOn            : 
+SerialNumber         : 00000000
+SKU                  : 
+Tag                  : Physical Memory 0
+Version              : 
+HotSwappable         : 
+Removable            : 
+Replaceable          : 
+FormFactor           : 8
+BankLabel            : P0 CHANNEL A
+Capacity             : 17179869184
+DataWidth            : 64
+InterleavePosition   : 
+MemoryType           : 0
+PositionInRow        : 
+Speed                : 2667
+TotalWidth           : 64
+Attributes           : 2
+ConfiguredClockSpeed : 2667
+ConfiguredVoltage    : 1200
+DeviceLocator        : DIMM 1
+InterleaveDataDepth  : 
+MaxVoltage           : 1200
+MinVoltage           : 1200
+SMBIOSMemoryType     : 26
+TypeDetail           : 16512
+PSComputerName       : 
+
+
+

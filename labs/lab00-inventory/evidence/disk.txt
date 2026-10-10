@@ -1,0 +1,53 @@
+﻿
+
+ClassName                        : MSFT_PhysicalDisk
+Usage                            : Auto-Select
+OperationalStatus                : OK
+UniqueIdFormat                   : SCSI Name String
+HealthStatus                     : Healthy
+BusType                          : NVMe
+CannotPoolReason                 : Insufficient Capacity
+SupportedUsages                  : {Auto-Select, Manual-Select, Hot Spare, Retired...}
+MediaType                        : SSD
+SpindleSpeed                     : 0
+ObjectId                         : {1}\\DESKTOP-EA7P1RT\root/Microsoft/Windows/Storage/Providers_v2\S
+                                   PACES_PhysicalDisk.ObjectId="{6f2f3954-1b52-11f0-a6a7-806e6f6e6963
+                                   }:PD:{19f82fda-6d4d-600c-ab98-a5a255dbc4e3}"
+PassThroughClass                 : 
+PassThroughIds                   : 
+PassThroughNamespace             : 
+PassThroughServer                : 
+UniqueId                         : eui.ACE42E0095475C47
+Description                      : 
+FriendlyName                     : SK hynix BC501 HFM256GDJTNG-8310A
+Manufacturer                     : 
+Model                            : SK hynix BC501 HFM256GDJTNG-8310A
+OperationalDetails               : 
+PhysicalLocation                 : Integrated : Bus 12 : Device 0 : Function 0 : Adapter 2
+SerialNumber                     : ACE4_2E00_9547_5C47.
+AdapterSerialNumber              : NS97N582011507O11   _0001
+AllocatedSize                    : 256058417152
+CanPool                          : False
+DeviceId                         : 0
+EnclosureNumber                  : 
+FirmwareVersion                  : 80002C00
+FruId                            : NS97N582011507O11
+IsIndicationEnabled              : False
+IsPartial                        : True
+LogicalSectorSize                : 512
+OtherCannotPoolReasonDescription : 
+PartNumber                       : 
+PhysicalSectorSize               : 4096
+Size                             : 256060514304
+SlotNumber                       : 
+SoftwareVersion                  : 
+StoragePoolUniqueId              : 
+VirtualDiskFootprint             : 0
+PSComputerName                   : 
+CimClass                         : root/microsoft/windows/storage:MSFT_PhysicalDisk
+CimInstanceProperties            : {ObjectId, PassThroughClass, PassThroughIds, 
+                                   PassThroughNamespace...}
+CimSystemProperties              : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
