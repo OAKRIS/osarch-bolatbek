@@ -2,7 +2,7 @@
 
 
 
-Machine: DESKTOP-EA7P1RT, lab01
+Machine: DESKTOP-EA7P1RT, lab01, lab02
 
 Date: 24.10.2026
 
@@ -12,66 +12,122 @@ Date: 24.10.2026
 
 
 
-1. Install VMware
-2. Get Ubuntu server
-3. Sized what parameters i need for my VM
-4. Created VM
-5. Took a screenshot of its settings for evidence
-6. Installed Ubuntu
-7. Logged in
-8. lsb-release -a
-9. nproc
-10. free -h
-11. df -h /
-12. ip a
-13. In host terminal, cd C:\\Users\\Admin\\OneDrive\\Desktop\\lol\\osarch-bolatbek\\labs
-14. mkdir lab01-first-vm
-15. cd lab01-first-vm
-16. mkdir evidence
-17. New-Item README.md -ItemType File
-18. git add . / git commit -m "created lab01 folder" / git push
-19. cd evidence
-20. ssh arrrs@192.168.201.129 lsb\_release -a > guest-release.txt
-21. Shut down guest and make a snapshot
-22. Powered on and deleted the hostname
-23. Took a screenshot of the broken state for evidence
-24. Reverted back
-25. cat /etc/hostname
-26. Took a screenshot of the snapshot list for evidence
-27. Added screenshots into evidence folder
-28. git add . / git commit -m "filled evidence folder" / git push
-29. Deleted desktop.ini file from GitHub
-30. git config pull.rebase false / git pull origin main --no-edit / git push origin main
+1. Install Windows 11 Enterprise evaluation ISO
+2. Set up lab02 VM (64GB disk, 4GB RAM)
+3. Installed Win11 and the guest tools
+4. Assigned "evidence" as shared folder
+5. Chose VMware NAT as the network
+6. ipconfig / ip addr - found wach guests' IPv4 address
+7. Couldn't save the evidence via CMD. Was able to access the path via PowerShell
+8. cd \\\\vmware-host\\Shared Folders\\evidence
+9. ipconfig > ipconfig-windows.txt
+10. ssh arrrs@192.168.201.129 ip addr > ip-addr-linux.txt
+11. git add . / git commit -n "creating a file and testing smt" / git push
+12. Tested whether PowerShell pushed files looked broken on GitHube (they did not)
+13. ping -n 192.168.201.129
+14. ping -c 4 192.168.201.130
+15. Get-NetConnectionProfile
+16. New-NetFirewallRule -DisplayName "Lab02 - allow ping (ICMPv4 echo)" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -RemoteAddress LocalSubnet -Action Allow
+17. Get-NetFirewallRule -DisplayName "Lab02\*"
+18. ping -n 4 192.168.201.129 > ping-both-ways.txt
+19. ssh student@192.168.201.129 ping -c 4 192.168.201.130 >> ping-both-ways.txt
+20. ping -n 2 8.8.8.8 / ping -c 2 8.8.8.8
+21. Took a host-memory-before.png screenshot from task manager
+22. Allocated 4GB for Ubuntu and 12GB for Windows 11
+23. Windows 11 VM refused to start, giving an "Not enough system resources..." error
+24. Increased host's paging size to 16-24GB
+25. sudo apt install -y stress-ng / stress-ng --vm 1 --vm-bytes 90% --vm-keep --timeout 300s
+26. Loaded multiple Youtube and reddit pages on Windows 11 VM
+27. Took a host-memory-after.png screenshot from task manager
+28. Changed the VMs' values back to normal
 
 
 
 ## Result
 
-My host has 4 threads, 16 GB of RAM and 49.45 GB free on the VM volume (Lab 0).
+Why this network mode:
 
-Idle, the host already uses about 7.9 GB of RAM.
+I used VMware NAT mode for both guests.
 
-I gave the guest 2 vCPU of my 4 threads because it balances performance by leaving 2 threads free for the host OS.
+Requirement: the guests must reach each other and the internet.
 
-I gave it 2 GB of my 16 GB RAM because Ubuntu Server needs minimal overhead to run the console, and I keep 2-3 GB for the Windows guest in Lab 2.
+VMware NAT meets both because it puts both guests on the same virtual network and handles routing to the internet.
 
-I gave it a 20 GB dynamically allocated disk of my 49.45 GB free because it provides plenty of room for software packages while leaving over 25 GB for the next lab's Windows VM.
+I did not use bridged because it can sometimes fail depending on how home routers handle local virtual adapters.
 
-
-
-## What did  not work the first time:
-
-After pushing evidence files GitHub had desktop.ini file alongside them. After deleting it from GitHub i couldn't push commits. Local repo and GitHub were out of sync, which blocked pushing. I pulled and merged commits, then pushed them.
+I did not use host-only because it isolates the network completely and blocks all internet access.
 
 
 
-## Evidence
+Network diagram:
 
-evidence/vm-settings.png - CPU, memory, and disk which have measurements that i gave it
+&#x20;                 Internet
 
-evidence/guest-release.txt - output of lsb\_release -a inside the guest showing Ubuntu Server LTS
+&#x20;                    |
 
-evidence/broken.png - the guest after deleting the hostname
+&#x20;     \[ Host: my PC ]   real network: Wi-Fi, 192.168.1.11
 
-evidence/snapshot-list.png - snapshot list showing clean-install after the successful rollback
+&#x20;                    |
+
+&#x20;      ( NAT router of the hypervisor )   gateway 192.168.201.2
+
+&#x20;                    |
+
+&#x20;   ===== virtual switch: VMnet8 (NAT) ======
+
+&#x20;          |                         |
+
+&#x20;  \[ lab01-ubuntu ]          \[ lab02-win11 ]
+
+&#x20;  ens33                     Ethernet0
+
+&#x20;  192.168.201.129           192.168.201.130
+
+
+
+The firewall:
+
+The first ping from Linux to Windows failed because Windows classifies the new network as Public and blocks incoming echo requests by default. To fix this, I added an inbound rule to allow only ICMPv4 type 8 echo requests from the local subnet: New-NetFirewallRule -DisplayName "Lab02 - allow ping (ICMPv4 echo)" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -RemoteAddress LocalSubnet -Action Allow
+
+
+
+Overcommitment experiment:
+
+Host total - 16GB (13.9 usable)
+
+Sum promised to the guests - 20GB (8GB Ubuntu, 12GB Windows 11)
+
+Before - 6.3GB in use, 7.6GB available, 11.9/16.9GB committed
+
+After - 13.6GB in use, 317MB available, 33.5/33.9GB committed
+
+How host felt - slight mouse lag, huge delay in opening/closing/moving windows
+
+What the host and hypervisor did - since memory was dropping close to zero, the host heavily relied on memory compression and page file swapping. The hypervisor honored the memory requests, causing system slowdowns and high disk usage as the host and guests competed for physical memory.
+
+
+
+## What did not work the first time:
+
+Could not access the shared evidence folder from cmd. Path or permission issues when accessing shared folders directly via standard cmd. Tested in PowerShell and verified file transfer and GitHub push without issues.
+
+The initial ping command did not work. The Windows Defender Firewall was blocking incoming ICMP echo requests by default. Opened PowerShell as Administrator.
+
+The Windows 11 VM refused to start during the overcommitment task, giving an "Not enough system resources..." error. The host physical RAM and virtual page file limits were fully exhausted, preventing the hypervisor from allocating the requested memory pool. Increased the host's paging file size to 16–24 GB.
+
+
+
+
+
+### Evidence
+
+evidence/ipconfig-windows.txt - output of ipconfig inside the Windows guest showing its IPv4 address on VMnet8
+
+evidence/ip-addr-linux.txt - output of ip addr inside the Ubuntu guest showing its network configuration and IP address
+
+evidence/ping-both-ways.txt - results of ping tests showing successful communication in both directions between the guests
+
+evidence/host-memory-before.png - host Task Manager memory performance view before overcommitment
+
+evidence/host-memory-after.png - host Task Manager memory performance view under heavy memory pressure
 
