@@ -1,6 +1,6 @@
 # Lab N - 02
 
-
+Pair: Amira Bolatbek / Nuraiym Mustafa. Driver first half: Mustafa
 
 Machine: DESKTOP-EA7P1RT, lab01, lab02
 
