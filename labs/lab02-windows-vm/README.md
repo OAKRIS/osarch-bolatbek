@@ -61,27 +61,27 @@ I did not use host-only because it isolates the network completely and blocks al
 
 Network diagram:
 
-&#x20;                 Internet
+&#x09;		Internet
+
+&#x09;		|
+
+&#x09;\[ Host: my PC ]   real network: Wi-Fi, 192.168.1.11
+
+&#x09;		|
+
+&#x09;( NAT router of the hypervisor )   gateway 192.168.201.2
 
 &#x20;                    |
 
-&#x20;     \[ Host: my PC ]   real network: Wi-Fi, 192.168.1.11
+&#x09;===== virtual switch: VMnet8 (NAT) ======
 
-&#x20;                    |
+&#x09;	|			|
 
-&#x20;      ( NAT router of the hypervisor )   gateway 192.168.201.2
+&#x09;\[ lab01-ubuntu ]          \[ lab02-win11 ]
 
-&#x20;                    |
+&#x09;ens33                     Ethernet0
 
-&#x20;   ===== virtual switch: VMnet8 (NAT) ======
-
-&#x20;          |                         |
-
-&#x20;  \[ lab01-ubuntu ]          \[ lab02-win11 ]
-
-&#x20;  ens33                     Ethernet0
-
-&#x20;  192.168.201.129           192.168.201.130
+&#x09;192.168.201.129           192.168.201.130
 
 
 
