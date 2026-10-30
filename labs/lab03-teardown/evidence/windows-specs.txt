@@ -1,1 +1,304 @@
+﻿**********************
+Начало записи сценария Windows PowerShell
+Время начала: 20261030153525
+Имя пользователя: DESKTOP-EA7P1RT\Admin
+Запуск от имени пользователя: DESKTOP-EA7P1RT\Admin
+Имя конфигурации: 
+Компьютер: DESKTOP-EA7P1RT (Microsoft Windows NT 10.0.26200.0)
+Ведущее приложение: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+ИД процесса: 14856
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Транскрибирование запущено, выходной файл windows-specs.txt
+PS C:\Users\Admin\OneDrive\Desktop\lol\osarch-bolatbek\labs\lab03-teardown\evidence> Get-CimInstance Win32_Processor | Format-List *
 
+
+Availability                            : 3
+CpuStatus                               : 1
+CurrentVoltage                          : 14
+DeviceID                                : CPU0
+ErrorCleared                            :
+ErrorDescription                        :
+LastErrorCode                           :
+LoadPercentage                          : 10
+Status                                  : OK
+StatusInfo                              : 3
+AddressWidth                            : 64
+DataWidth                               : 64
+ExtClock                                : 100
+L2CacheSize                             : 2048
+L2CacheSpeed                            :
+MaxClockSpeed                           : 3600
+PowerManagementSupported                : False
+ProcessorType                           : 3
+Revision                                : 6145
+SocketDesignation                       : AM4
+Version                                 : Модель 8, выпуск 1
+VoltageCaps                             :
+Caption                                 : AMD64 Family 23 Model 24 Stepping 1
+Description                             : AMD64 Family 23 Model 24 Stepping 1
+InstallDate                             :
+Name                                    : AMD Ryzen 3 3200G with Radeon Vega Graphics
+ConfigManagerErrorCode                  :
+ConfigManagerUserConfig                 :
+CreationClassName                       : Win32_Processor
+PNPDeviceID                             :
+PowerManagementCapabilities             :
+SystemCreationClassName                 : Win32_ComputerSystem
+SystemName                              : DESKTOP-EA7P1RT
+CurrentClockSpeed                       : 3600
+Family                                  : 107
+OtherFamilyDescription                  :
+Role                                    : CPU
+Stepping                                : 1
+UniqueId                                :
+UpgradeMethod                           : 49
+Architecture                            : 9
+AssetTag                                : Unknown
+Characteristics                         : 252
+L3CacheSize                             : 4096
+L3CacheSpeed                            : 0
+Level                                   : 23
+Manufacturer                            : AuthenticAMD
+NumberOfCores                           : 4
+NumberOfEnabledCore                     : 4
+NumberOfLogicalProcessors               : 4
+PartNumber                              : Unknown
+ProcessorId                             : 178BFBFF00810F81
+SecondLevelAddressTranslationExtensions : True
+SerialNumber                            : Unknown
+ThreadCount                             : 4
+VirtualizationFirmwareEnabled           : True
+VMMonitorModeExtensions                 : True
+PSComputerName                          :
+CimClass                                : root/cimv2:Win32_Processor
+CimInstanceProperties                   : {Caption, Description, InstallDate, Name...}
+CimSystemProperties                     : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+PS C:\Users\Admin\OneDrive\Desktop\lol\osarch-bolatbek\labs\lab03-teardown\evidence> Get-CimInstance Win32_ComputerSystem | Format-List *
+
+
+AdminPasswordStatus         : 3
+BootupState                 : Normal boot
+ChassisBootupState          : 3
+KeyboardPasswordStatus      : 3
+PowerOnPasswordStatus       : 3
+PowerSupplyState            : 3
+PowerState                  : 0
+FrontPanelResetStatus       : 3
+ThermalState                : 3
+Status                      : OK
+Name                        : DESKTOP-EA7P1RT
+PowerManagementCapabilities :
+PowerManagementSupported    :
+Caption                     : DESKTOP-EA7P1RT
+Description                 : AT/AT COMPATIBLE
+InstallDate                 :
+CreationClassName           : Win32_ComputerSystem
+NameFormat                  :
+PrimaryOwnerContact         :
+PrimaryOwnerName            : Admin
+Roles                       : {LM_Workstation, LM_Server, NT}
+InitialLoadInfo             :
+LastLoadInfo                :
+ResetCapability             : 1
+AutomaticManagedPagefile    : True
+AutomaticResetBootOption    : True
+AutomaticResetCapability    : True
+BootOptionOnLimit           :
+BootOptionOnWatchDog        :
+BootROMSupported            : True
+BootStatus                  : {0, 0, 0, 0...}
+ChassisSKUNumber            :
+CurrentTimeZone             : 300
+DaylightInEffect            :
+DNSHostName                 : DESKTOP-EA7P1RT
+Domain                      : WORKGROUP
+DomainRole                  : 0
+EnableDaylightSavingsTime   : True
+HypervisorPresent           : False
+InfraredSupported           : False
+Manufacturer                : HP
+Model                       : HP Desktop M01-D0xxx
+NetworkServerModeEnabled    : True
+NumberOfLogicalProcessors   : 4
+NumberOfProcessors          : 1
+OEMLogoBitmap               :
+OEMStringArray              : {FBYTE#2U3E3K3N4C6b7K7P7T7WaBapaqaraubCbhcAcbdUdpdqeJfPkc.BY;BUIL,
+                              DID#19WW2WAT602#SACB#DACB;,  ,  ...}
+PartOfDomain                : False
+PauseAfterReset             : -1
+PCSystemType                : 1
+PCSystemTypeEx              : 1
+ResetCount                  : -1
+ResetLimit                  : -1
+SupportContactDescription   :
+SystemFamily                : 103C_53311M HP Desktop PC
+SystemSKUNumber             : 8RS38EA#ACB
+SystemStartupDelay          :
+SystemStartupOptions        :
+SystemStartupSetting        :
+SystemType                  : x64-based PC
+TotalPhysicalMemory         : 14936838144
+UserName                    : DESKTOP-EA7P1RT\Admin
+WakeUpType                  : 6
+Workgroup                   : WORKGROUP
+PSComputerName              :
+CimClass                    : root/cimv2:Win32_ComputerSystem
+CimInstanceProperties       : {Caption, Description, InstallDate, Name...}
+CimSystemProperties         : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+PS C:\Users\Admin\OneDrive\Desktop\lol\osarch-bolatbek\labs\lab03-teardown\evidence> Get-CimInstance Win32_PhysicalMemory | Format-List *
+
+
+Caption               : Физическая память
+Description           : Физическая память
+InstallDate           :
+Name                  : Физическая память
+Status                :
+CreationClassName     : Win32_PhysicalMemory
+Manufacturer          : Unknown
+Model                 :
+OtherIdentifyingInfo  :
+PartNumber            : CL19-19-19 D4-2666
+PoweredOn             :
+SerialNumber          : 00000000
+SKU                   :
+Tag                   : Physical Memory 0
+Version               :
+HotSwappable          :
+Removable             :
+Replaceable           :
+FormFactor            : 8
+BankLabel             : P0 CHANNEL A
+Capacity              : 17179869184
+DataWidth             : 64
+InterleavePosition    :
+MemoryType            : 0
+PositionInRow         :
+Speed                 : 2667
+TotalWidth            : 64
+Attributes            : 2
+ConfiguredClockSpeed  : 2667
+ConfiguredVoltage     : 1200
+DeviceLocator         : DIMM 1
+InterleaveDataDepth   :
+MaxVoltage            : 1200
+MinVoltage            : 1200
+SMBIOSMemoryType      : 26
+TypeDetail            : 16512
+PSComputerName        :
+CimClass              : root/cimv2:Win32_PhysicalMemory
+CimInstanceProperties : {Caption, Description, InstallDate, Name...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+PS C:\Users\Admin\OneDrive\Desktop\lol\osarch-bolatbek\labs\lab03-teardown\evidence> Get-PhysicalDisk | Format-List *
+
+
+ClassName                        : MSFT_PhysicalDisk
+Usage                            : Auto-Select
+OperationalStatus                : OK
+UniqueIdFormat                   : SCSI Name String
+HealthStatus                     : Healthy
+BusType                          : NVMe
+CannotPoolReason                 : Insufficient Capacity
+SupportedUsages                  : {Auto-Select, Manual-Select, Hot Spare, Retired...}
+MediaType                        : SSD
+SpindleSpeed                     : 0
+ObjectId                         : {1}\\DESKTOP-EA7P1RT\root/Microsoft/Windows/Storage/Providers_v2\SPACES_PhysicalDisk
+                                   .ObjectId="{6f2f3954-1b52-11f0-a6a7-806e6f6e6963}:PD:{19f82fda-6d4d-600c-ab98-a5a255
+                                   dbc4e3}"
+PassThroughClass                 :
+PassThroughIds                   :
+PassThroughNamespace             :
+PassThroughServer                :
+UniqueId                         : eui.ACE42E0095475C47
+Description                      :
+FriendlyName                     : SK hynix BC501 HFM256GDJTNG-8310A
+Manufacturer                     :
+Model                            : SK hynix BC501 HFM256GDJTNG-8310A
+OperationalDetails               :
+PhysicalLocation                 : Integrated : Bus 12 : Device 0 : Function 0 : Adapter 2
+SerialNumber                     : ACE4_2E00_9547_5C47.
+AdapterSerialNumber              : NS97N582011507O11   _0001
+AllocatedSize                    : 256058417152
+CanPool                          : False
+DeviceId                         : 0
+EnclosureNumber                  :
+FirmwareVersion                  : 80002C00
+FruId                            : NS97N582011507O11
+IsIndicationEnabled              : False
+IsPartial                        : True
+LogicalSectorSize                : 512
+OtherCannotPoolReasonDescription :
+PartNumber                       :
+PhysicalSectorSize               : 4096
+Size                             : 256060514304
+SlotNumber                       :
+SoftwareVersion                  :
+StoragePoolUniqueId              :
+VirtualDiskFootprint             : 0
+PSComputerName                   :
+CimClass                         : root/microsoft/windows/storage:MSFT_PhysicalDisk
+CimInstanceProperties            : {ObjectId, PassThroughClass, PassThroughIds, PassThroughNamespace...}
+CimSystemProperties              : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+PS C:\Users\Admin\OneDrive\Desktop\lol\osarch-bolatbek\labs\lab03-teardown\evidence> Get-CimInstance Win32_BaseBoard | Format-List *
+
+
+Status                  : OK
+Name                    : Основная плата
+PoweredOn               : True
+Caption                 : Основная плата
+Description             : Основная плата
+InstallDate             :
+CreationClassName       : Win32_BaseBoard
+Manufacturer            : HP
+Model                   :
+OtherIdentifyingInfo    :
+PartNumber              :
+SerialNumber            : PHZHQ0DCYCS1M2
+SKU                     :
+Tag                     : Base Board
+Version                 : SMVB
+Depth                   :
+Height                  :
+HotSwappable            : False
+Removable               : True
+Replaceable             : True
+Weight                  :
+Width                   :
+HostingBoard            : True
+RequirementsDescription :
+RequiresDaughterBoard   : False
+SlotLayout              :
+SpecialRequirements     :
+ConfigOptions           : {                      }
+Product                 : 8643
+PSComputerName          :
+CimClass                : root/cimv2:Win32_BaseBoard
+CimInstanceProperties   : {Caption, Description, InstallDate, Name...}
+CimSystemProperties     : Microsoft.Management.Infrastructure.CimSystemProperties
+
+
+
+PS C:\Users\Admin\OneDrive\Desktop\lol\osarch-bolatbek\labs\lab03-teardown\evidence> Stop-Transcript
+**********************
+Конец записи протокола Windows PowerShell
+Время окончания: 20261030153625
+**********************
