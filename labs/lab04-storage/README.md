@@ -69,9 +69,9 @@ Date: 06.11.2026
 
 ## Windows
 
-Disk 0: partition style ..., firmware\_type ... — because ...
+Disk 0: partition style GPT, firmware\_type UEFI — because UEFI firmware requires a GPT partition style to boot modern operating systems.
 
-New disk: partition style ... — because ...
+New disk: partition style GPT — because it is standard practice, even though 2 GB fits under both MBR and GPT.
 
 Output of Get-Disk:
 
@@ -135,23 +135,23 @@ loop2                     66.8M loop squashfs    /snap/core24/1643
 
 loop3                     50.1M loop squashfs    /snap/snapd/27710
 
-sda                         20G disk             
+sda                         20G disk
 
-├─sda1                       1M part             
+├─sda1                       1M part
 
 ├─sda2                     1.8G part ext4        /boot
 
-└─sda3                    18.2G part LVM2\_member 
+└─sda3                    18.2G part LVM2\_member
 
 &#x20; └─ubuntu--vg-ubuntu--lv   10G lvm  ext4        /
 
-sdb                          2G disk             
+sdb                          2G disk
 
-sdc                          2G disk             
+sdc                          2G disk
 
-sdd                          2G disk             
+sdd                          2G disk
 
-sr0                        2.7G rom  iso9660     
+sr0                        2.7G rom  iso9660
 
 
 
