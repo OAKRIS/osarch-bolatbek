@@ -1,0 +1,9 @@
+PS C:\Users\InnotechPC> Get-History
+
+  Id CommandLine
+  -- -----------
+   1 Get-CimInstance Win32_Processor | Format-List *
+   2 systeminfo
+   3 Get-PhysicalDisk | Format-List *
+   4 Get-Volume
+   5 Get-Disk
