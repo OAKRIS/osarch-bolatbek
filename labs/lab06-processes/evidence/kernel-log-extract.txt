@@ -1,0 +1,12 @@
+[Fri Nov 20 09:56:32 2026] systemd invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
+[Fri Nov 20 09:56:32 2026]  oom_kill_process.cold+0x8/0xac
+[Fri Nov 20 09:56:32 2026]  __alloc_pages_may_oom+0x10a/0x1d0
+[Fri Nov 20 09:56:32 2026] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[Fri Nov 20 09:56:32 2026] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-1.scope,task=python3,pid=3026,uid=1000
+[Fri Nov 20 09:56:32 2026] Out of memory: Killed process 3026 (python3) total-vm:3046152kB, anon-rss:1264848kB, file-rss:2392kB, shmem-rss:0kB, UID:1000 pgtables:5820kB oom_score_adj:0
+[Fri Nov 20 09:56:32 2026] bash invoked oom-killer: gfp_mask=0x140cca(GFP_HIGHUSER_MOVABLE|__GFP_COMP), order=0, oom_score_adj=0
+[Fri Nov 20 09:56:32 2026]  oom_kill_process.cold+0x8/0xac
+[Fri Nov 20 09:56:32 2026]  __alloc_pages_may_oom+0x10a/0x1d0
+[Fri Nov 20 09:56:32 2026] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[Fri Nov 20 09:56:32 2026] oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=/,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/user@1000.service/init.scope,task=systemd,pid=2013,uid=1000
+[Fri Nov 20 09:56:32 2026] Out of memory: Killed process 2013 (systemd) total-vm:22540kB, anon-rss:2436kB, file-rss:3056kB, shmem-rss:0kB, UID:1000 pgtables:88kB oom_score_adj:100
